@@ -1,0 +1,70 @@
+{
+  "usuarios": [
+    {
+      "id": "0f82",
+      "nombre": "GABRIEL",
+      "apellido": "MONCAYO",
+      "edad": 54,
+      "correo": "gabrielmoncayo93@gmail.com",
+      "direccion": "sector entrada  la bota",
+      "contrasena": "123456",
+      "rol": "administrador"
+    },
+    {
+      "nombre": "GABRIELl",
+      "apellido": "MONC",
+      "edad": 34,
+      "correo": "gabrielmoncayo93@gmail.com",
+      "direccion": "av la prensa",
+      "contrasena": "12345678",
+      "rol": "administrador",
+      "id": "f3b4"
+    },
+    {
+      "id": "3429",
+      "nombre": "BETTY",
+      "apellido": "PATRON",
+      "edad": 45,
+      "correo": "BETTY@GMAIL.COM",
+      "direccion": "CARCELEN",
+      "contrasena": "1234",
+      "rol": "empleado"
+    },
+    {
+      "id": "dee0",
+      "nombre": "GABRIEL",
+      "apellido": "MONCAYO",
+      "edad": 15,
+      "correo": "gabrielmoncayo93@gmail.com",
+      "direccion": "sector entrada  la bota",
+      "contrasena": "123456",
+      "rol": "administrador"
+    }
+  ],
+  "peliculas": [
+    {
+      "id": "1",
+      "nombre": "Avatar",
+      "descripcion": "Una película sobre un mundo alienígena.",
+      "genero": "Ciencia Ficción",
+      "duracion": 162,
+      "año": 2009
+    },
+    {
+      "id": "2",
+      "nombre": "Titanic",
+      "descripcion": "Una historia de amor en el océano.",
+      "genero": "Romántica",
+      "duracion": 195,
+      "año": 1997
+    },
+    {
+      "id": "3",
+      "nombre": "El Señor de los Anillos",
+      "descripcion": "Una aventura épica en la Tierra Media.",
+      "genero": "Fantasía",
+      "duracion": 178,
+      "año": 2001
+    }
+  ]
+}

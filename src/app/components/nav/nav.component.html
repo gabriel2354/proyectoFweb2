@@ -1,0 +1,41 @@
+<!-- Navbar -->
+<nav class="bg-blue-600 py-4">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-center h-16">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+        <!-- Mobile Menu Button -->
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:justify-center">
+        <div class="flex space-x-4">
+          <!-- Home -->
+          <a routerLink="home" routerLinkActive="activo" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+          </a>
+          <!-- Movies -->
+          <a routerLink="peliculas" routerLinkActive="activo" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+            <i class="fas fa-film"></i>
+            <span>Movies</span>
+          </a>
+          <!-- Shows -->
+          <a routerLink="inicio-sesion" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Iniciar Sesion</span>
+          </a>
+         
+          <!-- Administrador Dropdown -->
+          <div class="relative">
+            <button (click)="toggleMenu()" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+              <i class="fas fa-cogs"></i>
+              <span>Administrador</span>
+            </button>
+            <div class="absolute left-0 w-48 bg-blue-700 text-white mt-2 rounded-md shadow-lg z-10" *ngIf="menuVisible">
+              <a routerLink="tabla-usuarios" routerLinkActive="activo" class="block px-4 py-2 text-sm">Tabla Usuarios</a>
+              <a routerLink="tabla-peliculas" routerLinkActive="activo" class="block px-4 py-2 text-sm">Tabla Peliculas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

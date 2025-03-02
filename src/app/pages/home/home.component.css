@@ -1,0 +1,120 @@
+/* Fondo de la sección del Hero y tarjetas */
+section {
+    background: transparent; /* El fondo transparente para no sobrescribir el gradiente global */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras sutiles para un efecto más moderno */
+  }
+  
+  /* Hero Section - Carousel de imágenes */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    justify-content: center;  /* Centra las imágenes */
+    align-items: center;      /* Centra las imágenes verticalmente */
+  }
+  
+  .carousel-slide img {
+    width: 100%;              /* Asegura que las imágenes ocupen todo el contenedor */
+    height: 400px;            /* Limita la altura de las imágenes */
+    object-fit: cover;        /* Ajusta la imagen sin deformarla */
+    display: block;           /* Evita que el navegador agregue un espacio extra debajo de la imagen */
+  }
+  
+  /* Tarjetas de Películas */
+  section.py-16.bg-white .grid div {
+    background-color: rgb(59, 57, 57); /* Fondo gris oscuro para las tarjetas */
+    border: 1px solid #494c4f; /* Borde gris oscuro */
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para las tarjetas */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición para el efecto hover */
+  }
+  
+  /* Cambiar el color de fondo de la tarjeta al pasar el mouse */
+  section.py-16.bg-white .grid div:hover {
+    background-color: #3182ce; /* Fondo azul brillante cuando se pasa el ratón */
+    transform: scale(1.05); /* Efecto de escala para hacer que la tarjeta crezca ligeramente */
+  }
+  
+  /* Estilos dentro de la tarjeta */
+  section.py-16.bg-white img {
+    width: 100%;              /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: 100px;            /* Limita la altura para que no sean demasiado grandes */
+    object-fit: cover;        /* Ajusta las imágenes a la caja sin distorsionar */
+    display: block;           /* Elimina el margen por defecto debajo de la imagen */
+    margin: 0 auto;           /* Centra horizontalmente */
+  }
+  
+  /* Cambiar color de texto dentro de las tarjetas a blanco */
+  section.py-16.bg-white .p-4 {
+    padding: 1rem;
+    color: white; /* Texto blanco dentro de las tarjetas */
+  }
+  
+
+  /* Título principal */
+  section.py-16 h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: white; /* Color del título en blanco */
+  }
+  
+  /* Descripción */
+  section.py-16 p {
+    font-size: 1.125rem;
+    text-align: center;
+    color: white; /* Descripción en blanco */
+    margin-top: 1rem;
+  }
+   /* Sección de Imagen Estática */
+#static-image {
+    transition: transform 0.3s ease-out; /* Transición para el efecto de parallax */
+  }
+  
+  /* Efecto Parallax (Imagen quieta al mover el ratón) */
+  section.relative:hover #static-image {
+    transform: translateY(0px); /* Asegura que la imagen se quede fija mientras el fondo se mueve */
+  }
+  
+  /* Estilo para el texto en el medio de la imagen */
+  section.relative .text-center {
+    position: absolute;
+    top: 50%; /* Centra el texto verticalmente */
+    left: 50%; /* Centra el texto horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar completamente */
+  }
+  
+  section.relative h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la visibilidad del texto */
+  }
+  
+  section.relative p {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  section.relative button {
+    font-size: 1rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  section.relative button:hover {
+    background-color: #3182ce; /* Azul brillante en el hover */
+  }
+  

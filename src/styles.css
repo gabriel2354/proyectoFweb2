@@ -1,0 +1,12 @@
+/* Fondo de toda la página */
+body {
+    background: linear-gradient(135deg, #111, #444); /* Fondo negro con un gradiente sutil */
+    color: white; /* Color de texto blanco */
+    font-family: 'Arial', sans-serif; /* Tipografía general */
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que el fondo cubra toda la altura de la página */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alineación vertical */
+  }

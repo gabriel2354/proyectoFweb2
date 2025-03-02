@@ -1,0 +1,74 @@
+/* Fondo y estilos generales para la sección de login */
+section.relative {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  /* Estilos para el formulario de login */
+  form {
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo oscuro translúcido */
+    padding: 2rem;
+    border-radius: 0.5rem;
+  }
+  
+  form h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  form label {
+    font-size: 1rem;
+    color: white;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #494c4f;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* Estilo para cuando el campo está en foco */
+  form input:focus {
+    outline: none;
+    border: 1px solid #3182ce; /* Resalta el borde con color azul */
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  
+  form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #3182ce;
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #2563eb; /* Azul más oscuro al pasar el mouse */
+  }
+  
+  form a {
+    color: #3182ce;
+    transition: color 0.3s ease;
+  }
+  
+  form a:hover {
+    color: #2563eb;
+  }
+  
+  /* Añadir margen en la parte inferior de la sección */
+  section.relative {
+    padding-bottom: 2rem;
+  }
+  

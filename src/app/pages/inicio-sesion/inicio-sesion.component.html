@@ -1,0 +1,32 @@
+<!-- Sección de Login con Imagen de Fondo -->
+<section class="relative bg-gray-900 h-screen flex items-center justify-center" style="background-image: url('https://via.placeholder.com/1500x900?text=Imagen+de+Fondo'); background-size: cover;">
+  <div class="max-w-md w-full bg-opacity-75 bg-black p-8 rounded-lg shadow-lg">
+    <h2 class="text-3xl font-extrabold text-center text-white">Iniciar Sesión</h2>
+    
+    <!-- Formulario de inicio de sesión -->
+    <form action="#" method="POST" class="mt-6 space-y-4">
+      <div>
+        <label for="email" class="block text-white">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required placeholder="Ingresa tu correo" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600" />
+      </div>
+      
+      <div>
+        <label for="password" class="block text-white">Contraseña</label>
+        <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600" />
+      </div>
+      
+      <button type="submit" class="w-full mt-4 py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Iniciar Sesión</button>
+      
+      <div class="text-center mt-4">
+        <a href="#" class="text-blue-300 hover:text-blue-400">¿Olvidaste tu contraseña?</a>
+      </div>
+      
+      <div class="text-center mt-4">
+        <p class="text-white">¿No tienes una cuenta? 
+          <a routerLink="/registro-usuarios" class="text-blue-300 hover:text-blue-400">Regístrate aquí</a>
+        </p>
+      </div>
+      
+    </form>
+  </div>
+</section>
