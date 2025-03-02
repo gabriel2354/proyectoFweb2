@@ -10,6 +10,8 @@
       <th class="px-4 py-2">Género</th>
       <th class="px-4 py-2">Duración</th>
       <th class="px-4 py-2">Año</th>
+      <th class="px-4 py-2">Precio</th>
+      <th class="px-4 py-2">Imagen</th>
       <th class="px-4 py-2">Acciones</th>
     </tr>
   </thead>
@@ -20,7 +22,9 @@
       <td class="px-4 py-2">{{ pelicula.descripcion }}</td>
       <td class="px-4 py-2">{{ pelicula.genero }}</td>
       <td class="px-4 py-2">{{ pelicula.duracion }} mins</td>
-      <td class="px-4 py-2">{{ pelicula.ano }}</td> <!-- Cambié 'año' por 'ano' -->
+      <td class="px-4 py-2">{{ pelicula.ano }}</td>
+      <td class="px-4 py-2">${{ pelicula.precio }}</td>
+      <td class="px-4 py-2"><img [src]="pelicula.imagen" alt="{{ pelicula.nombre }}" width="50"></td>
       <td class="px-4 py-2">
         <button (click)="eliminarPelicula(pelicula.id)" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Eliminar</button>
         <button (click)="editarPelicula(pelicula)" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 ml-2">Editar</button>
@@ -55,8 +59,16 @@
       <input type="number" id="duracion" name="duracion" [(ngModel)]="pelicula.duracion" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
     </div>
     <div>
-      <label for="ano" class="block text-sm font-medium text-gray-600">Año</label> <!-- Cambié 'año' por 'ano' -->
+      <label for="ano" class="block text-sm font-medium text-gray-600">Año</label>
       <input type="number" id="ano" name="ano" [(ngModel)]="pelicula.ano" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+    </div>
+    <div>
+      <label for="precio" class="block text-sm font-medium text-gray-600">Precio</label>
+      <input type="number" id="precio" name="precio" [(ngModel)]="pelicula.precio" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+    </div>
+    <div>
+      <label for="imagen" class="block text-sm font-medium text-gray-600">Imagen (URL)</label>
+      <input type="text" id="imagen" name="imagen" [(ngModel)]="pelicula.imagen" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
     </div>
     <button type="submit" class="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 mt-4">{{ formularioPelicula ? 'Actualizar Película' : 'Agregar Película' }}</button>
   </form>

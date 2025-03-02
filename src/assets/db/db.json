@@ -29,42 +29,28 @@
       "direccion": "CARCELEN",
       "contrasena": "1234",
       "rol": "empleado"
-    },
-    {
-      "id": "dee0",
-      "nombre": "GABRIEL",
-      "apellido": "MONCAYO",
-      "edad": 15,
-      "correo": "gabrielmoncayo93@gmail.com",
-      "direccion": "sector entrada  la bota",
-      "contrasena": "123456",
-      "rol": "administrador"
     }
   ],
   "peliculas": [
     {
-      "id": "1",
-      "nombre": "Avatar",
-      "descripcion": "Una película sobre un mundo alienígena.",
-      "genero": "Ciencia Ficción",
-      "duracion": 162,
-      "año": 2009
+      "id": "6355",
+      "nombre": "Cortesía Hook",
+      "descripcion": "Quizás no esté entre las mejores películas de Steven Spielberg, pero 'Hook' nos dejó un buen puñado de momento icónicos y una versión diferente, mágica y rica de la historia de Peter Pan, creada por J.M. Barrie. ",
+      "genero": "ficcion",
+      "duracion": 135,
+      "ano": 2015,
+      "precio": 23,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/hook-66ca0a896c88e.jpg?crop=1xw:1xh;center,top&resize=980:*"
     },
     {
-      "id": "2",
-      "nombre": "Titanic",
-      "descripcion": "Una historia de amor en el océano.",
-      "genero": "Romántica",
-      "duracion": 195,
-      "año": 1997
-    },
-    {
-      "id": "3",
-      "nombre": "El Señor de los Anillos",
-      "descripcion": "Una aventura épica en la Tierra Media.",
+      "id": "690a",
+      "nombre": "una odisea en el espacio",
+      "descripcion": "Cuando pensamos en cine de aventuras quizás nos venga a la cabeza algo como Indiana Jones, pero lo que Stanley Kubrick hizo en esta película son, también, aventuras espaciales de primer nivel.",
       "genero": "Fantasía",
-      "duracion": 178,
-      "año": 2001
+      "duracion": 123,
+      "ano": 2001,
+      "precio": 12,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/2001-una-odisea-en-el-espacio-66ca0a87959ae.jpg?crop=1xw:1xh;center,top&resize=980:*"
     }
   ]
 }

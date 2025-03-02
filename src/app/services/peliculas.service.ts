@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-// Definir un modelo básico para las películas (puedes agregar más campos según lo necesites)
+// Definir un modelo básico para las películas (con los campos precio e imagen)
 export interface Pelicula {
   id?: number;
   nombre: string;
@@ -10,13 +10,15 @@ export interface Pelicula {
   genero: string;
   duracion: number;
   ano: number;
+  precio: number;  // Nuevo campo: precio de la película
+  imagen: string;  // Nuevo campo: URL de la imagen de la película
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeliculasService {
-  private apiUrl = 'http://localhost:3000/peliculas'; // URL de tu backend, puedes cambiarla por la tuya
+  private apiUrl = 'http://localhost:3000/peliculas'; // URL del backend (puedes cambiarla si es necesario)
 
   constructor(private http: HttpClient) { }
 
@@ -25,12 +27,12 @@ export class PeliculasService {
     return this.http.get<Pelicula[]>(this.apiUrl);
   }
 
-  // Método POST: Crear una nueva película
+  // Método POST: Crear una nueva película (con los campos 'precio' e 'imagen')
   agregarPelicula(pelicula: Pelicula): Observable<Pelicula> {
     return this.http.post<Pelicula>(this.apiUrl, pelicula);
   }
 
-  // Método PUT: Actualizar una película
+  // Método PUT: Actualizar una película (con los campos 'precio' e 'imagen')
   actualizarPelicula(id: number, pelicula: Pelicula): Observable<Pelicula> {
     return this.http.put<Pelicula>(`${this.apiUrl}/${id}`, pelicula);
   }

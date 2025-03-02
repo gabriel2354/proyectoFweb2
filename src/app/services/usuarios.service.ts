@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';  // Asegúrate de importar map
 
 // Modelo para los datos de los usuarios
 interface Usuario {
@@ -43,5 +44,17 @@ export class UsuariosService {
   // Método DELETE: Eliminar un usuario
   eliminarUsuario(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  // Método adicional: Verificar credenciales del usuario para inicio de sesión
+  verificarCredenciales(correo: string, contrasena: string): Observable<Usuario | null> {
+    // Filtra los usuarios que coincidan con el correo y la contraseña
+    return this.http.get<Usuario[]>(this.apiUrl).pipe(
+      map((usuarios: Usuario[]) => {
+        return usuarios.find(
+          usuario => usuario.correo === correo && usuario.contrasena === contrasena
+        ) || null; // Si no se encuentra, devuelve null
+      })
+    );
   }
 }
