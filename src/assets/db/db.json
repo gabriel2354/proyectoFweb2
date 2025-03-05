@@ -51,6 +51,106 @@
       "ano": 2001,
       "precio": 12,
       "imagen": "https://hips.hearstapps.com/hmg-prod/images/2001-una-odisea-en-el-espacio-66ca0a87959ae.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "f676",
+      "nombre": "La saga 'El señor de los anillos'",
+      "descripcion": "¿Ha habido alguna vez una historia más épica que la que escribió sobre el papel J.R.R. Tolkien? 'El señor de los anillos' es motivo de culto entre fans de todo el mundo por razones más que evidentes, y las películas de Peter Jackson solo hicieron que agrandar su público y su leyenda. Tres películas para dominarlos a todos (a la taquilla, a los Oscars, a los fans) y convertirse en una de las grandes aventuras cinematográficas del siglo XXI.\n\n",
+      "genero": "Ciencia Ficción",
+      "duracion": 240,
+      "ano": 1997,
+      "precio": 20,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/el-senor-de-los-anillos-la-comunidad-del-anillo-66ca0a8662a4f.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "1d79",
+      "nombre": "Amblin Entertainment La máscara del Zorro",
+      "descripcion": "Antonio Banderas se convirtió en uno de los héroes más famosos de la cultura popular, El Zorro, y nos regaló así esta fantástica película de aventuras en la California de mediados del siglo XIX. Con Anthony Hopkins y Catherine Zeta-Jones en el reparto, esta película de Martin Campbell sigue al protagonista desde que es un pobre diablo buscando vengar a su hermano hasta que se convierte en un guerrero por los derechos de los más desfavorecidos.",
+      "genero": "Acción",
+      "duracion": 90,
+      "ano": 1998,
+      "precio": 7,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/la-mascara-del-zorro-66ca0a855bc4d.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "nombre": "Cortesía La búsqueda",
+      "descripcion": "Esta película de Walt Disney Pictures puede parecer absurda a ratos, pero es un entretenimiento de aventuras de primer nivel, que sigue a un equipo decidido a encontrar el legendario tesoro de los Caballeros Templarios. Con Diane Kruger, Jon Voight, Harvey Keitel y Sean Bean en el reparto, tuvo tanto éxito entre el público que hasta tuvo secuela.",
+      "genero": "Ficción",
+      "duracion": 102,
+      "ano": 2010,
+      "precio": 10,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/la-busqueda-66ca0a83cffcb.jpg?crop=1xw:1xh;center,top&resize=980:*",
+      "id": "2fe9"
+    },
+    {
+      "id": "e9df",
+      "nombre": "Amblin Entertainment E.T., el extraterrestre",
+      "descripcion": "El director nos tocó el corazón con esta historia, que sigue a un extraterrestre perdido en la Tierra que encuentra la amistad más pura junto a un niño humano (interpretado por el joven Henry Thomas). Con un guion de Melissa Mathison, Spielberg se empezó a coronar como el rey de Hollywood.",
+      "genero": "Infantil",
+      "duracion": 98,
+      "ano": 2016,
+      "precio": 9,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/et-el-extraterrestre-66ca0a83df6f7.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "c4aa",
+      "nombre": "El rey léon",
+      "descripcion": "La sabana africana es el escenario en el que tienen lugar las aventuras de Simba, un pequeño león que es el heredero del trono. Sin embargo, al ser injustamente acusado por el malvado Scar de la muerte de su padre, se ve obligado a exiliarse. Durante su destierro, hará buenas amistades e intentará regresar para recuperar lo que legítimamente le corresponde.",
+      "genero": "Infantil",
+      "duracion": 110,
+      "ano": 1994,
+      "precio": 13,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/el-rey-leon-fotogramas-1604925485.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "6caa",
+      "nombre": "El castillo en el cielo",
+      "descripcion": "Aunque infravalorada respecto a otros clásicos de Studio Ghibli como 'El viaje de Chihiro' o 'Mi vecino Totoro', esta es una de las mejores películas de Hayao Miyazaki, y posiblemente la película más puramente de aventuras del estudio. Influenciada por 'Los viajes de Gulliver' y otras obras europeas, 'El castillo en el cielo' cuenta la historia de una joven caída del cielo y su fiel y valiente acompañante hasta una ciudad voladora cuya desaparición desvela las vergüenzas del ser humano.",
+      "genero": "Infantil ",
+      "duracion": 120,
+      "ano": 1986,
+      "precio": 15,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/el-castillo-en-el-cielo-66ca0a8683dc9.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "3a9a",
+      "nombre": "King Kong",
+      "descripcion": "Aunque podríamos recurrir a versiones tan antiguas como 'King Kong' de 1933, nos quedamos por su gran escala y excelsa calidad de cine de aventuras con esta notable versión de Peter Jackson estrenada en 2005. La historia sigue a Ann Darrow (Naomi Watts), una actriz de vodevil que, desempleada, acepta viajar con el empresario Carl Denham (Jack Black) y el dramaturgo Jack Driscoll (Adrien Brody) hasta una remota isla donde Denham tiene previsto dirigir una película. Sin embargo, en esa selva esperan misterios y peligros que no esperaban, incluido un gran gorila conocido como King Kong.",
+      "genero": "Ciencia Ficción",
+      "duracion": 120,
+      "ano": 2005,
+      "precio": 23,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/king-kong-66ca0a873e337.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "c78a",
+      "nombre": "La Momia",
+      "descripcion": "El ahora desaparecido Brendan Fraser protagonizó esta película que ha quedado para los anales de la historia del cine de aventuras. Y en un lugar más que privilegiado. La comedia, el amor y el compañerismo se funden en una historia de peligros egipcios en forma de momias centenarias, que se levantan de sus tumbas para recuperar aquello que una vez perdieron.",
+      "genero": "Ciencia Ficción",
+      "duracion": 130,
+      "ano": 1999,
+      "precio": 32,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/la-momia-66ca0a8e92399.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "335d",
+      "nombre": "Jumanji",
+      "descripcion": "Esta película, convertida en una de las películas clásicas de la infancia de nuestra generación, nos muestra cómo las aventuras pueden provenir de cualquier lugar, hasta de los juegos de mesa llenos de polvo. Sobre todo, este film de Joe Johnston -que tendrá un reboot el próximo año protagonizado por Dwayne Johnson- nos enseñó que no se deben hacer trampas, a menos que quieras acabar convertido en mono.",
+      "genero": "Ficción",
+      "duracion": 120,
+      "ano": 1995,
+      "precio": 22,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/jumanji-66ca0a8db54d6.jpg?crop=1xw:1xh;center,top&resize=980:*"
+    },
+    {
+      "id": "e786",
+      "nombre": "Jurassic Park",
+      "descripcion": "Si hay algo que puede desatar el alma aventurera de cualquier persona es, sin duda, una crisis de seguridad en un parque lleno de dinosaurios creados a partir de un mosquito conservado en ámbar. ¿Improbable! ¡Para nada! Si no, que se lo cuenten a Sam Neill. Esa es la chispa que inicia esta increíble saga, primero con la trilogía de Steven Spielberg y más adelante con las películas de 'Jurassic World'.",
+      "genero": "Ciencia Ficción",
+      "duracion": 123,
+      "ano": 2004,
+      "precio": 34,
+      "imagen": "https://hips.hearstapps.com/hmg-prod/images/jurassic-park-66ca0a8d7342b.jpg?crop=1xw:1xh;center,top&resize=980:*"
     }
   ]
 }
