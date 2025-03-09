@@ -1,34 +1,36 @@
-{
+{"empleado":[
+
+],
+  "administrador": [
+    {
+      "id": 1,
+      "nombre": "Carlos",
+      "apellido": "Fernández",
+      "edad": 40,
+      "correo": "carlos.admin@example.com",
+      "direccion": "Avenida Central 456",
+      "contrasena": "admin123",
+      "rol": "administrador"
+    }
+  ],
   "usuarios": [
     {
-      "id": "0f82",
-      "nombre": "GABRIEL",
-      "apellido": "MONCAYO",
-      "edad": 54,
-      "correo": "gabrielmoncayo93@gmail.com",
-      "direccion": "sector entrada  la bota",
-      "contrasena": "123456",
-      "rol": "administrador"
+      "nombre": "Cristhiam",
+      "apellido": "Sabando",
+      "edad": 26,
+      "correo": "cris@gmail.com",
+      "direccion": "Av.Solanda",
+      "contrasena": "12345",
+      "id": 1
     },
     {
-      "nombre": "GABRIELl",
-      "apellido": "MONC",
-      "edad": 34,
-      "correo": "gabrielmoncayo93@gmail.com",
-      "direccion": "av la prensa",
-      "contrasena": "12345678",
-      "rol": "administrador",
-      "id": "f3b4"
-    },
-    {
-      "id": "3429",
-      "nombre": "BETTY",
-      "apellido": "PATRON",
-      "edad": 45,
-      "correo": "BETTY@GMAIL.COM",
-      "direccion": "CARCELEN",
-      "contrasena": "1234",
-      "rol": "empleado"
+      "nombre": "prueba",
+      "apellido": "prueba",
+      "edad": 5,
+      "correo": "p@gmail.com",
+      "direccion": "asdasd",
+      "contrasena": "12345",
+      "id": 2
     }
   ],
   "peliculas": [

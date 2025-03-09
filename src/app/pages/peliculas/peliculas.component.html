@@ -32,18 +32,34 @@
         <p><strong>Imagen:</strong> <img [src]="peliculaSeleccionada.imagen" alt="{{ peliculaSeleccionada.nombre }}" class="w-full h-32 object-cover mt-2"></p>
         <p><strong>Usuario:</strong> {{ usuarioNombre }}</p>
         
-        <div class="mt-4 flex justify-between">
-          <button 
-            (click)="comprar()" 
-            class="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
-            Comprar
-          </button>
-          <button 
-            (click)="cerrarModal()" 
-            class="py-2 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300">
-            Cerrar
-          </button>
+        <div class="mt-4 flex flex-col space-y-4">
+          <!-- Mensaje de éxito -->
+          <div *ngIf="successMessage" 
+               class="p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg animate-fade-in">
+            {{ successMessage }}
+          </div>
+        
+          <!-- Mensaje de error -->
+          <div *ngIf="error" 
+               class="p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg animate-fade-in">
+            {{ error }}
+          </div>
+        
+          <!-- Botones -->
+          <div class="flex justify-between">
+            <button 
+              (click)="comprar()" 
+              class="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
+              Comprar
+            </button>
+            <button 
+              (click)="cerrarModal()" 
+              class="py-2 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300">
+              Cerrar
+            </button>
+          </div>
         </div>
+        
       </div>
     </div>
   </div>

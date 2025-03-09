@@ -1,38 +1,54 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule, RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common'; // Importa CommonModule
 
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [RouterOutlet, RouterModule, CommonModule], // Añade CommonModule aquí
+  imports: [ RouterModule, CommonModule], // Añade CommonModule aquí
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent {
-  menuVisible = false;
+
   nombreUsuario: string | null = ''; // Variable para almacenar el nombre del usuario
-  isLoggedIn: boolean = false; // Variable para saber si el usuario está logueado
+  tipoUsuario: string | null = '';
+  isLoggedIn: boolean = false; 
+  isAdmin: boolean = false; 
+  isAdminMenuOpen = false;
 
-  constructor(private router: Router) {}  // Inyecta el servicio Router en el constructor
+  constructor(private router: Router) {
+    this.isAdmin = localStorage.getItem('tipo') === 'administrador';
 
-  toggleMenu() {
-    this.menuVisible = !this.menuVisible;
-  }
+  }  // Inyecta el servicio Router en el constructor
 
   ngOnInit() {
-    // Recuperar el nombre del usuario desde localStorage
-    this.nombreUsuario = localStorage.getItem('usuarioNombre');
-    
-    // Si el nombre del usuario existe, está logueado
-    this.isLoggedIn = this.nombreUsuario !== null;
+    this.nombreUsuario = localStorage.getItem('nombreUsuario');
+    this.tipoUsuario = localStorage.getItem('tipo');
+
+    // Verificar si el usuario está logueado
+    this.isLoggedIn = this.nombreUsuario !== null && this.tipoUsuario !== null; 
+  }
+
+  toggleAdminMenu() {
+    this.isAdminMenuOpen = !this.isAdminMenuOpen;
+  }
+
+  // Cierra el menú al hacer clic fuera
+  @HostListener('document:click', ['$event'])
+  closeMenu(event: Event) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.admin-menu-container')) {
+      this.isAdminMenuOpen = false;
+    }
   }
 
   // Método para cerrar sesión
   cerrarSesion() {
-    localStorage.removeItem('usuarioNombre');  // Eliminar el nombre del usuario
-    this.nombreUsuario = '';  // Limpiar la variable
-    this.isLoggedIn = false;  // Cambiar el estado de logueo
-    this.router.navigate(['/login']);  // Redirigir al login
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('tipo');
+    localStorage.removeItem('nombreUsuario');
+    this.tipoUsuario = null;
+    this.router.navigate(['/inicio-sesion']); // Redirigir al login // Redirigir al login
   }
 }

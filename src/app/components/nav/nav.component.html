@@ -5,16 +5,18 @@
   <!-- Otros elementos del navbar -->
 
   <div class="user-info">
+    <!-- Mostrar nombre si está logueado -->
     <span *ngIf="nombreUsuario">Bienvenido, {{ nombreUsuario }}</span>
+    <!-- Mostrar "invitado" si no hay nombre -->
     <span *ngIf="!nombreUsuario">Bienvenido, invitado</span>
-
+  
     <!-- Mostrar el botón de Cerrar sesión si el usuario está logueado -->
     <button class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2" *ngIf="isLoggedIn" (click)="cerrarSesion()">Cerrar sesión</button>
-
+  
     <!-- Mostrar "Iniciar sesión" solo si el usuario no está logueado -->
     <a *ngIf="!isLoggedIn" routerLink="/inicio-sesion">Iniciar sesión</a>
-
   </div>
+  
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-center h-16">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -32,19 +34,24 @@
             <i class="fas fa-film"></i>
             <span>Movies</span>
           </a>
-         
-         
+
           <!-- Administrador Dropdown -->
-          <div class="relative">
-            <button (click)="toggleMenu()" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+          <div class="relative admin-menu-container" *ngIf="tipoUsuario === 'admin'">
+            <button (click)="toggleAdminMenu()" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
               <i class="fas fa-cogs"></i>
-              <span>Administrador</span>
+              <span  #menu>Administrador</span>
             </button>
-            <div class="absolute left-0 w-48 bg-blue-700 text-white mt-2 rounded-md shadow-lg z-10" *ngIf="menuVisible">
+          
+            <div *ngIf="isAdminMenuOpen"
+            class="absolute left-0 w-48 bg-blue-700 text-white mt-2 rounded-md shadow-lg z-10">
+        
               <a routerLink="tabla-usuarios" routerLinkActive="activo" class="block px-4 py-2 text-sm">Tabla Usuarios</a>
               <a routerLink="tabla-peliculas" routerLinkActive="activo" class="block px-4 py-2 text-sm">Tabla Peliculas</a>
+              <a routerLink="tabla-administrador" routerLinkActive="activo" class="block px-4 py-2 text-sm">Tabla Administradores</a>
             </div>
           </div>
+          
+          
         </div>
       </div>
     </div>
