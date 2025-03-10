@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
-  imports: [FormsModule, CommonModule,RouterLink,RouterModule],
+  imports: [FormsModule, CommonModule, RouterLink, RouterModule],
   templateUrl: './inicio-sesion.component.html',
   styleUrls: ['./inicio-sesion.component.css']
 })
@@ -15,18 +15,18 @@ export class InicioSesionComponent {
   correo: string = '';
   contrasena: string = '';
   error: string = ''; // Variable para mostrar errores
-  passwordVisible:boolean=false;
-
+  passwordVisible: boolean = false;
 
   constructor(private usuariosService: UsuariosService, private router: Router) {}
 
   // Método para iniciar sesión
   iniciarSesion() {
+    // No encriptamos la contraseña aquí, se enviará tal cual al backend
     this.usuariosService.verificarCredenciales(this.correo, this.contrasena).subscribe(
       (resultado) => {
         if (resultado) {
           // Guardar datos en localStorage
-          localStorage.setItem('usuario', JSON.stringify(resultado.datos));
+          localStorage.setItem('usuarios', JSON.stringify(resultado.datos));
           localStorage.setItem('tipo', resultado.tipo);
           localStorage.setItem('nombreUsuario', resultado.datos.nombre);
           // Redirigir según el tipo
@@ -45,11 +45,9 @@ export class InicioSesionComponent {
       }
     );
   }
-  
 
-
+  // Función para hacer visible/invisible la contraseña
   visible() {
     this.passwordVisible = !this.passwordVisible;
   }
-  
-}  
+}

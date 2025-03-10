@@ -18,8 +18,13 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
+    "bcryptjs": "^3.0.2",
+    "json-server": "^1.0.0-beta.3",
+    "json-server-auth": "^2.1.0",
+    "jspdf": "^3.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "xpress": "^2.4.6",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

@@ -10,6 +10,8 @@ import { authGuard } from './guardian/auth.guard';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
 import { RegistroAdministradorComponent } from './components/registro-administrador/registro-administrador.component';
 import { TablaAdministradorComponent } from './components/tabla-administrador/tabla-administrador.component';
+import { FacturaComponent } from './components/factura/factura.component';
+import { SobreNosotrosComponent } from './pages/sobre-nosotros/sobre-nosotros.component';
 
 
 export const routes: Routes = [
@@ -17,6 +19,8 @@ export const routes: Routes = [
   { path: 'peliculas', component: PeliculasComponent },
   { path: 'inicio-sesion', component: InicioSesionComponent },
   { path: 'registro-usuarios', component: RegistroUsuariosComponent},
+  { path: 'sobre-nosotros', component: SobreNosotrosComponent},
+  {path: 'factura', component: FacturaComponent},
   // Rutas restringidas solo para administradores
   { path: 'administrador', component: AdministradorComponent, canActivate: [authGuard] },
   {path:'registro-administrador', component:RegistroAdministradorComponent,canActivate:[authGuard]},

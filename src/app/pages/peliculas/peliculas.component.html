@@ -1,66 +1,113 @@
 <div class="container mx-auto mt-8">
-    <h2 class="text-3xl font-bold text-center text-white mb-8">Cartelera de Películas</h2>
-    
-    <!-- Cartelera de Películas -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <div *ngFor="let pelicula of peliculas" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-        <img [src]="pelicula.imagen" alt="{{ pelicula.nombre }}" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold text-white">{{ pelicula.nombre }}</h3>
-          <p class="text-gray-400">{{ pelicula.descripcion | slice:0:100 }}...</p>
-          <p class="text-gray-300">Género: {{ pelicula.genero }}</p>
-          <p class="text-yellow-500">Precio: ${{ pelicula.precio }}</p>
-          <p class="text-gray-300">Duración: {{ pelicula.duracion }} mins</p>
-          <button 
-            (click)="mostrarModal(pelicula)" 
-            class="mt-4 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
-            Reservar Entrada
-          </button>
-        </div>
+  <h2 class="text-3xl font-bold text-center text-white mb-8">Estrenos</h2>
+
+  <!-- Carrusel de imágenes -->
+  <div class="relative">
+    <div class="carousel-container w-full overflow-hidden">
+      <div class="flex transition-transform duration-500 ease-in-out" id="carousel">
+        <!-- Imagen 1 -->
+        <img src="https://hips.hearstapps.com/hmg-prod/images/las-aventuras-de-tintin-el-secreto-del-unicornio-66ca0a888dc8a.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Imagen 1" class="w-full object-cover">
+        <!-- Imagen 2 -->
+        <img src="https://hips.hearstapps.com/hmg-prod/images/ben-hur-66ca0a8b127e8.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Imagen 2" class="w-full object-cover">
+        <!-- Imagen 3 -->
+        <img src="https://hips.hearstapps.com/hmg-prod/images/jurassic-park-66ca0a8d7342b.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Imagen 3" class="w-full object-cover">
+        <!-- Imagen 4 -->
+        <img src="https://hips.hearstapps.com/hmg-prod/images/piratas-del-caribe-la-maldicion-de-la-perla-negra-66ca0a8ea7f88.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Imagen 4" class="w-full object-cover">
+        <!-- Imagen 5 -->
+        <img src="https://hips.hearstapps.com/hmg-prod/images/hacia-rutas-salvajes-66ca0a8ef16cf.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Imagen 5" class="w-full object-cover">
       </div>
     </div>
-  
-    <!-- Modal de Reserva -->
-    <div *ngIf="modalVisible" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div class="bg-gray-900 text-white p-6 rounded-lg w-1/3">
-        <h3 class="text-2xl font-bold">{{ peliculaSeleccionada.nombre }}</h3>
-        <p><strong>Descripción:</strong> {{ peliculaSeleccionada.descripcion }}</p>
-        <p><strong>Género:</strong> {{ peliculaSeleccionada.genero }}</p>
-        <p><strong>Duración:</strong> {{ peliculaSeleccionada.duracion }} mins</p>
-        <p><strong>Precio:</strong> ${{ peliculaSeleccionada.precio }}</p>
-        <p><strong>Año:</strong> {{ peliculaSeleccionada.ano }}</p>
-        <p><strong>Imagen:</strong> <img [src]="peliculaSeleccionada.imagen" alt="{{ peliculaSeleccionada.nombre }}" class="w-full h-32 object-cover mt-2"></p>
-        <p><strong>Usuario:</strong> {{ usuarioNombre }}</p>
-        
-        <div class="mt-4 flex flex-col space-y-4">
-          <!-- Mensaje de éxito -->
-          <div *ngIf="successMessage" 
-               class="p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg animate-fade-in">
-            {{ successMessage }}
-          </div>
-        
-          <!-- Mensaje de error -->
-          <div *ngIf="error" 
-               class="p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg animate-fade-in">
-            {{ error }}
-          </div>
-        
-          <!-- Botones -->
-          <div class="flex justify-between">
-            <button 
-              (click)="comprar()" 
-              class="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
-              Comprar
-            </button>
-            <button 
-              (click)="cerrarModal()" 
-              class="py-2 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300">
-              Cerrar
-            </button>
-          </div>
-        </div>
-        
+
+    <!-- Controles del carrusel -->
+    <button id="prevButton" class="absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="nextButton" class="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <br>
+
+  <h2 class="text-3xl font-bold text-center text-white mb-8">Cartelera de Películas</h2>
+
+  <!-- Cartelera de Películas -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div *ngFor="let pelicula of peliculas" class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+      <img [src]="pelicula.imagen" alt="{{ pelicula.nombre }}" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-white">{{ pelicula.nombre }}</h3>
+        <p class="text-gray-400">{{ pelicula.descripcion | slice:0:100 }}...</p>
+        <p class="text-gray-300">Género: {{ pelicula.genero }}</p>
+        <p class="text-yellow-500">Precio: ${{ pelicula.precio }}</p>
+        <p class="text-gray-300">Duración: {{ pelicula.duracion }} mins</p>
+        <button 
+          (click)="agregarAlCarrito(pelicula)" 
+          class="mt-4 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300">
+          Agregar al Carrito
+        </button>
       </div>
     </div>
   </div>
-  
+
+  <!-- Carrito en la Navbar -->
+  <div class="fixed top-0 right-0 p-4">
+    <button (click)="mostrarModalCarrito()" class="text-white text-xl">
+      <i class="fas fa-shopping-cart"></i> 
+      <span *ngIf="carrito.length > 0" class="bg-red-600 text-white rounded-full px-2 py-1 text-xs">{{ carrito.length }}</span>
+    </button>
+  </div>
+
+  <!-- Modal de Carrito -->
+  <div *ngIf="modalVisible" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div class="bg-gray-900 text-white p-6 rounded-lg w-3/4 md:w-1/2">
+      <h3 class="text-2xl font-bold">Carrito</h3>
+
+      <!-- Información del Usuario -->
+      <div class="mt-4">
+        <p><strong>Usuario:</strong> {{ usuarioNombre }}</p>
+        <p><strong>Email:</strong> {{ usuarioCorreo }}</p>
+      </div>
+
+      <!-- Detalles de las Películas en el Carrito -->
+      <div class="space-y-4 mt-4">
+        <div *ngFor="let item of carrito; let i = index" class="flex justify-between items-center">
+          <div class="flex items-center">
+            <img [src]="item.imagen" alt="{{ item.nombre }}" class="w-16 h-16 object-cover mr-4">
+            <p>{{ item.nombre }} - ${{ item.precio }}</p>
+          </div>
+          <button (click)="eliminarDelCarrito(i)" class="text-red-600 hover:text-red-800">Eliminar</button>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <p class="text-xl">Total: ${{ total }}</p>
+      </div>
+
+      <!-- Mensaje de éxito -->
+      <div *ngIf="successMessage" 
+           class="p-3 bg-green-100 border border-green-400 text-green-700 rounded-lg animate-fade-in">
+        {{ successMessage }}
+      </div>
+
+      <!-- Mensaje de error -->
+      <div *ngIf="error" 
+           class="p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg animate-fade-in">
+        {{ error }}
+      </div>
+
+      <div class="mt-4 flex justify-between">
+        <button 
+          (click)="comprar()" 
+          class="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
+          Realizar compra 
+        </button>
+        <button 
+          (click)="cerrarModal()" 
+          class="py-2 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

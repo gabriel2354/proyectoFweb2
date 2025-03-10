@@ -45,7 +45,7 @@ export class NavComponent {
 
   // Método para cerrar sesión
   cerrarSesion() {
-    localStorage.removeItem('usuario');
+    localStorage.removeItem('usuarios');
     localStorage.removeItem('tipo');
     localStorage.removeItem('nombreUsuario');
     this.tipoUsuario = null;

@@ -1,0 +1,156 @@
+/* Estilos generales */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+/* Estilos de la sección "Sobre nosotros" */
+.about-us {
+    padding: 60px 0;
+    color: #fff;
+    position: relative;
+    background: url('https://images.pexels.com/photos/3379942/pexels-photo-3379942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-header h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+.about-header p {
+    color: #ccc;
+    font-size: 1.2em;
+}
+
+/* About Content */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.about-left {
+    flex: 1;
+}
+
+.about-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Iconos */
+.about-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.icon {
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+}
+
+.icon i {
+    font-size: 2em;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.icon p {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+    color: #3b82f6;
+}
+
+.icon i:hover {
+    transform: scale(1.2);
+}
+
+/* Formulario de contacto */
+.contact-form {
+    background-color: #2d2d2d;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-form p {
+    font-size: 1em;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #bbb;
+}
+
+.contact-form button {
+    padding: 15px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #2563eb;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}

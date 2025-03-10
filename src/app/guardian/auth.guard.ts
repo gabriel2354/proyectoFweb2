@@ -3,7 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 
 export const authGuard: CanActivateFn = (route, state) => {
   const router = inject(Router); // Usar inyección de dependencias para router
-  const usuario = JSON.parse(localStorage.getItem('usuario') || '{}'); // Obtener el usuario del localStorage
+  const usuario = JSON.parse(localStorage.getItem('usuarios') || '{}'); // Obtener el usuario del localStorage
 
   // Si el usuario no está autenticado, redirigir al login
   if (!usuario || !usuario.rol) {

@@ -1,0 +1,81 @@
+/* Fondo global */
+body {
+    background-image: url('https://images.unsplash.com/photo-1505740422869-d26b6a1f58f7'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Contenedor de la factura */
+  .container {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  /* Títulos */
+  h2, h3 {
+    font-weight: bold;
+  }
+  
+  /* Detalles del usuario */
+  .bg-gray-800 {
+    background-color: rgba(31, 31, 31, 0.9); /* Fondo más oscuro */
+    border-radius: 10px;
+  }
+  
+  .bg-opacity-75 {
+    opacity: 0.75;
+  }
+  
+  /* Ajustes de texto */
+  .text-white {
+    color: white;
+  }
+  
+  .text-yellow-500 {
+    color: #f59e0b; /* Color dorado para precios */
+  }
+  
+  .space-y-4 {
+    margin-top: 20px;
+  }
+  
+  .mt-8 {
+    margin-top: 2rem;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-4xl {
+    font-size: 2.25rem;
+  }
+  
+  /* Botones de interacción */
+  button {
+    background-color: #3b82f6;
+    padding: 12px 24px;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2563eb;
+  }
+  

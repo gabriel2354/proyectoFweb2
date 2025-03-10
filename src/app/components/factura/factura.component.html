@@ -1,0 +1,39 @@
+<div class="container mx-auto mt-8">
+    <h2 class="text-4xl font-bold text-center text-white mb-8">Factura de Compra</h2>
+  
+    <!-- User details -->
+    <div class="bg-gray-800 bg-opacity-75 p-6 rounded-lg shadow-lg">
+      <h3 class="text-2xl text-white font-semibold">Detalles del Usuario</h3>
+      <p class="text-white mt-4"><strong>Nombre:</strong> {{ usuario.nombre }} {{ usuario.apellido }}</p>
+      <p class="text-white"><strong>Email:</strong> {{ usuario.correo }}</p>
+      <p class="text-white"><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+    </div>
+  
+    <!-- Purchased products -->
+    <div class="mt-8 bg-gray-800 bg-opacity-75 p-6 rounded-lg shadow-lg">
+      <h3 class="text-2xl text-white font-semibold">Productos Comprados</h3>
+      <ul class="space-y-4 mt-4">
+        <li *ngFor="let item of carrito">
+          <div class="flex justify-between">
+            <p class="text-white">{{ item.nombre }}</p>
+            <p class="text-yellow-500">${{ item.precio }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Total amount -->
+    <div class="mt-8 bg-gray-800 bg-opacity-75 p-6 rounded-lg shadow-lg">
+      <h3 class="text-2xl text-white font-semibold">Total: ${{ total }}</h3>
+    </div>
+  
+    <!-- Button to download PDF -->
+    <div class="mt-8 text-center">
+      <button 
+        (click)="descargarPDF()" 
+        class="py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300">
+        Descargar Factura en PDF
+      </button>
+    </div>
+  </div>
+  

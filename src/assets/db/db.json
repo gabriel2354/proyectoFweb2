@@ -1,17 +1,15 @@
-{"empleado":[
-
-],
+{
+  "empleado": [],
   "administrador": [
     {
-      "id": 1,
-      "nombre": "Carlos",
-      "apellido": "Fernández",
-      "edad": 40,
-      "correo": "carlos.admin@example.com",
-      "direccion": "Avenida Central 456",
-      "contrasena": "admin123",
-      "rol": "administrador"
+      "nombre": "gabriel",
+      "apellido": "mocayo",
+      "correo": "gabriel@gmail.com",
+      "contrasena": "123456",
+      "rol": "administrador",
+      "id": 2
     }
+    
   ],
   "usuarios": [
     {
@@ -31,6 +29,15 @@
       "direccion": "asdasd",
       "contrasena": "12345",
       "id": 2
+    },
+    {
+      "nombre": "jose",
+      "apellido": "mendez",
+      "edad": 23,
+      "correo": "jose@gmail.com",
+      "direccion": "av  la prensa",
+      "contrasena": "123456",
+      "id": 3
     }
   ],
   "peliculas": [

@@ -1,0 +1,175 @@
+/* Carrusel */
+.carousel-container {
+    position: relative;
+  }
+  
+  #carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  #carousel img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  button {
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Controles de carrusel */
+  #prevButton, #nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  #prevButton {
+    left: 10px;
+  }
+  
+  #nextButton {
+    right: 10px;
+  }
+  
+  /* Cartelera de Películas */
+  .container {
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Estilo de las tarjetas */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsivo */
+    gap: 2rem;
+  }
+  
+  .grid div {
+    background-color: #2d2d2d;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .grid div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Imagen de cada tarjeta */
+  .grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .grid div:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Contenido de las tarjetas */
+  .grid .p-4 {
+    padding: 1rem;
+    color: white;
+  }
+  
+  .grid h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .grid p {
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+  
+  .grid .text-yellow-500 {
+    color: #fbbf24;
+  }
+  
+  .grid button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .grid button:hover {
+    background-color: #2563eb;
+  }
+  
+  /* Modal */
+  #modal {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #modal .modal-content {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+  }
+  
+  /* Carrito en la Navbar */
+  .fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .fixed button {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fixed button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .fixed button span {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+  }
+  
