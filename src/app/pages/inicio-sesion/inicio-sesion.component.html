@@ -1,32 +1,36 @@
-<!-- Sección de Login con Imagen de Fondo -->
-<section class="relative bg-gray-900 h-screen flex items-center justify-center" style="background-image: url('https://via.placeholder.com/1500x900?text=Imagen+de+Fondo'); background-size: cover;">
-  <div class="max-w-md w-full bg-opacity-75 bg-black p-8 rounded-lg shadow-lg">
-    <h2 class="text-3xl font-extrabold text-center text-white">Iniciar Sesión</h2>
+<!-- Sección de Login con Imagen de Fondo a la Derecha -->
+<section class="h-screen flex items-center justify-between bg-gradient-to-r from-blue-500 to-indigo-600">
+
+  <!-- Formulario de Login (Lado Izquierdo) -->
+  <div class="w-full sm:w-1/2 bg-opacity-80 bg-black p-8 rounded-lg shadow-xl">
+    <h2 class="text-4xl font-extrabold text-center text-white">Iniciar Sesión</h2>
     
     <!-- Formulario de inicio de sesión -->
-    <form #formulario="ngForm" (ngSubmit)="iniciarSesion()" class="mt-6 space-y-4">
+    <form #formulario="ngForm" (ngSubmit)="iniciarSesion()" class="mt-6 space-y-6">
       <div>
-        <label for="email" class="block text-white">Correo Electrónico</label>
-        <input type="email" id="email" [(ngModel)]="correo" name="email" required placeholder="Ingresa tu correo" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600" />
+        <label for="email" class="block text-white text-lg">Correo Electrónico</label>
+        <input type="email" id="email" [(ngModel)]="correo" name="email" required placeholder="Ingresa tu correo" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 hover:bg-gray-700 transition duration-300" />
       </div>
       
       <div>
-        <label for="password" class="block text-white">Contraseña</label>
-        <input [type]="passwordVisible ? 'text' : 'password'"  id="password" [(ngModel)]="contrasena" name="password" required placeholder="Ingresa tu contraseña" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600" />
+        <label for="password" class="block text-white text-lg">Contraseña</label>
+        <input [type]="passwordVisible ? 'text' : 'password'"  id="password" [(ngModel)]="contrasena" name="password" required placeholder="Ingresa tu contraseña" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 hover:bg-gray-700 transition duration-300" />
       </div>
-        <!-- Checkbox para mostrar la contraseña -->
-        <div class="flex items-center mb-5">
-          <input type="checkbox" id="showPassword" (click)="visible()" class="mr-2">
-          <label for="showPassword" class="text-white text-sm">Mostrar contraseña</label>
+
+      <!-- Checkbox para mostrar la contraseña -->
+      <div class="flex items-center mb-6">
+        <input type="checkbox" id="showPassword" (click)="visible()" class="mr-2">
+        <label for="showPassword" class="text-white text-sm">Mostrar contraseña</label>
       </div>
-      <button type="submit" class="w-full mt-4 py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300">Iniciar Sesión</button>
+
+      <button type="submit" class="w-full mt-4 py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Iniciar Sesión</button>
       
       <div class="text-center mt-4">
         <a href="#" class="text-blue-300 hover:text-blue-400">¿Olvidaste tu contraseña?</a>
       </div>
       
       <div class="text-center mt-4">
-        <p class="text-white">¿No tienes una cuenta? 
+        <p class="text-white text-sm">¿No tienes una cuenta? 
           <a routerLink="/registro-usuarios" class="text-blue-300 hover:text-blue-400">Regístrate aquí</a>
         </p>
       </div>
@@ -38,4 +42,10 @@
       
     </form>
   </div>
+
+  <!-- Imagen (Lado Derecho) -->
+  <div class="w-1/2 hidden sm:block">
+    <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-inicio-sesion_114360-739.jpg?t=st=1741637151~exp=1741640751~hmac=43d56ad822ee1f70bbe12f3aac1ece40d1e459e5f219f5cb78fe095c5bb051b3&w=1060" alt="Imagen de Inicio de Sesión" class="w-full h-full object-cover rounded-lg shadow-lg">
+  </div>
+
 </section>

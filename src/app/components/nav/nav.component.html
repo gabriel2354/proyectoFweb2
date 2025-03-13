@@ -1,29 +1,19 @@
 <!-- Navbar -->
-<nav class="bg-blue-600 py-2 px-4 flex justify-between items-center">
+<nav class="bg-blue-600 py-1 px-6 flex justify-between items-center">
 
   <!-- User Info (Mostrar nombre y sesión) -->
   <div class="user-info flex items-center gap-2">
     <!-- Icono de usuario -->
     <i class="fas fa-user-circle text-white"></i> 
     <!-- Mostrar nombre si está logueado -->
-    <span *ngIf="nombreUsuario" class="text-white">Bienvenido, {{ nombreUsuario }}</span>
+    <span *ngIf="nombreUsuario" class="text-white">Bienvenido, <span class="text-lg font-bold">{{ nombreUsuario }}</span></span>
+    
     <!-- Mostrar "invitado" si no hay nombre -->
-    <span *ngIf="!nombreUsuario" class="text-white">Bienvenido, invitado</span>
+    <span *ngIf="!nombreUsuario" class="text-white">Bienvenido, <span class="text-lg font-bold">Invitado</span></span> 
+    
   </div>
 
-  <!-- Mostrar el botón de Cerrar sesión si el usuario está logueado -->
-  <div class="flex items-center gap-4">
-    <button *ngIf="isLoggedIn" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2" (click)="cerrarSesion()">
-      <i class="fas fa-sign-out-alt"></i>
-      <span>Cerrar sesión</span>
-    </button>
-    
-    <!-- Mostrar "Iniciar sesión" solo si el usuario no está logueado -->
-    <a *ngIf="!isLoggedIn" routerLink="/inicio-sesion" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
-      <i class="fas fa-sign-in-alt"></i>
-      <span>Iniciar sesión</span>
-    </a>
-  </div>
+
 
   <!-- Navbar Links (Enlaces) -->
   <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -64,4 +54,17 @@
       </div>
     </div>
   </div>
+    <!-- Mostrar el botón de Cerrar sesión si el usuario está logueado -->
+    <div class="flex items-center gap-4">
+      <button *ngIf="isLoggedIn" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2" (click)="cerrarSesion()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Cerrar sesión</span>
+      </button>
+      
+      <!-- Mostrar "Iniciar sesión" solo si el usuario no está logueado -->
+      <a *ngIf="!isLoggedIn" routerLink="/inicio-sesion" class="text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Iniciar sesión</span>
+      </a>
+    </div>
 </nav>

@@ -8,10 +8,17 @@
       "contrasena": "123456",
       "rol": "administrador",
       "id": 2
+    },
+    {
+      "nombre": "Augusto",
+      "apellido": "Viteri",
+      "correo": "augustoviteri@gmail.com",
+      "contrasena": "123456",
+      "rol": "administrador",
+      "id": 3
     }
-    
   ],
-  "usuarios": [
+  "users": [
     {
       "nombre": "Cristhiam",
       "apellido": "Sabando",
@@ -22,15 +29,6 @@
       "id": 1
     },
     {
-      "nombre": "prueba",
-      "apellido": "prueba",
-      "edad": 5,
-      "correo": "p@gmail.com",
-      "direccion": "asdasd",
-      "contrasena": "12345",
-      "id": 2
-    },
-    {
       "nombre": "jose",
       "apellido": "mendez",
       "edad": 23,
@@ -38,6 +36,24 @@
       "direccion": "av  la prensa",
       "contrasena": "123456",
       "id": 3
+    },
+    {
+      "nombre": "Augusto",
+      "apellido": "Viteri",
+      "edad": 26,
+      "correo": "augustoviteri98@gmail.com",
+      "direccion": "Guaranda",
+      "contrasena": "123456",
+      "id": 4
+    },
+    {
+      "nombre": "Luis",
+      "apellido": "Borja",
+      "correo": "lb@gmail.com",
+      "edad": 24,
+      "direccion": "Los Trigales",
+      "contrasena": "123456",
+      "id": 5
     }
   ],
   "peliculas": [

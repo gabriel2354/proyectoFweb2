@@ -1,75 +1,68 @@
-<h2 class="text-2xl font-bold text-center">Películas Registradas</h2>
+<section class="flex flex-col items-center ">
+  <div class="fondo"></div>
+<h2 class="text-3xl font-bold text-center text-gray-100 mt-6">Películas Registradas</h2>
 
-<!-- Tabla de películas -->
-<table class="min-w-full table-auto mt-8">
-  <thead class="bg-gray-800 text-white">
-    <tr>
-      <th class="px-4 py-2">ID</th>
-      <th class="px-4 py-2">Nombre</th>
-      <th class="px-4 py-2">Descripción</th>
-      <th class="px-4 py-2">Género</th>
-      <th class="px-4 py-2">Duración</th>
-      <th class="px-4 py-2">Año</th>
-      <th class="px-4 py-2">Precio</th>
-      <th class="px-4 py-2">Imagen</th>
-      <th class="px-4 py-2">Acciones</th>
-    </tr>
-  </thead>
-  <tbody class="bg-gray-700 text-white">
-    <tr *ngFor="let pelicula of peliculas">
-      <td class="px-4 py-2">{{ pelicula.id }}</td>
-      <td class="px-4 py-2">{{ pelicula.nombre }}</td>
-      <td class="px-4 py-2">{{ pelicula.descripcion }}</td>
-      <td class="px-4 py-2">{{ pelicula.genero }}</td>
-      <td class="px-4 py-2">{{ pelicula.duracion }} mins</td>
-      <td class="px-4 py-2">{{ pelicula.ano }}</td>
-      <td class="px-4 py-2">${{ pelicula.precio }}</td>
-      <td class="px-4 py-2"><img [src]="pelicula.imagen" alt="{{ pelicula.nombre }}" width="50"></td>
-      <td class="px-4 py-2">
-        <button (click)="eliminarPelicula(pelicula.id)" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Eliminar</button>
-        <button (click)="editarPelicula(pelicula)" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 ml-2">Editar</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<!-- Tabla de películas con diseño mejorado -->
+<div class="overflow-x-auto mt-8">
+  <table class="table-container min-w-full bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden">
+    <thead class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <tr>
+        <th class="px-6 py-3">ID</th>
+        <th class="px-6 py-3">Nombre</th>
+        <th class="px-6 py-3">Descripción</th>
+        <th class="px-6 py-3">Género</th>
+        <th class="px-6 py-3">Duración</th>
+        <th class="px-6 py-3">Año</th>
+        <th class="px-6 py-3">Precio</th>
+        <th class="px-6 py-3">Imagen</th>
+        <th class="px-6 py-3">Acciones</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-700">
+      <tr *ngFor="let pelicula of peliculas" class="hover:bg-gray-800 transition duration-300">
+        <td class="px-6 py-4">{{ pelicula.id }}</td>
+        <td class="px-6 py-4">{{ pelicula.nombre }}</td>
+        <td class="px-6 py-4">{{ pelicula.descripcion }}</td>
+        <td class="px-6 py-4">{{ pelicula.genero }}</td>
+        <td class="px-6 py-4">{{ pelicula.duracion }} mins</td>
+        <td class="px-6 py-4">{{ pelicula.ano }}</td>
+        <td class="px-6 py-4 text-green-400 font-semibold">${{ pelicula.precio }}</td>
+        <td class="px-6 py-4">
+          <img [src]="pelicula.imagen" alt="{{ pelicula.nombre }}" class="w-16 h-16 rounded-lg shadow-lg">
+        </td>
+        <td class="px-6 py-4 flex flex-col gap-4 items-center">
+          <button (click)="eliminarPelicula(pelicula.id)" class="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition justify-center">
+            <i class="fas fa-trash-alt"></i> Eliminar
+          </button>
+          <button (click)="editarPelicula(pelicula)" class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            <i class="fas fa-edit"></i> Editar
+          </button>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <!-- Botón para agregar nueva película -->
 <div class="text-center mt-8">
-  <button (click)="mostrarFormularioNuevo()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Agregar Nueva Película</button>
+  <button (click)="mostrarFormularioNuevo()" class="px-6 py-3 bg-green-500 text-white rounded-lg shadow-lg hover:bg-green-600 transition">Agregar Nueva Película</button>
 </div>
 
 <!-- Formulario para agregar/editar película -->
-<div *ngIf="formularioVisible" class="mt-8 p-4 bg-gray-800 text-white rounded-lg">
-  <h3 class="text-xl font-bold text-center">{{ formularioPelicula ? 'Editar Película' : 'Agregar Nueva Película' }}</h3>
+<div *ngIf="formularioVisible" class="mt-8 p-6 bg-gray-900 text-white rounded-lg shadow-lg mx-auto formulario_usuario">
+  <h3 class="text-2xl font-bold text-center mb-4">{{ formularioPelicula ? 'Editar Película' : 'Agregar Nueva Película' }}</h3>
   <form (ngSubmit)="guardar(formulario)" #formulario="ngForm" class="space-y-4">
-    <div>
-      <label for="nombre" class="block text-sm font-medium text-gray-600">Nombre</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="pelicula.nombre" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+    <div class="grid grid-cols-1 gap-4">
+      <input type="text" id="nombre" name="nombre" [(ngModel)]="pelicula.nombre" class="w-full px-4 py-2  border border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Nombre" required>
+      <textarea id="descripcion" name="descripcion" [(ngModel)]="pelicula.descripcion" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Descripción" required></textarea>
+      <input type="text" id="genero" name="genero" [(ngModel)]="pelicula.genero" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Género" required>
+      <input type="number" id="duracion" name="duracion" [(ngModel)]="pelicula.duracion" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Duración (min)" required>
+      <input type="number" id="ano" name="ano" [(ngModel)]="pelicula.ano" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Año" required>
+      <input type="number" id="precio" name="precio" [(ngModel)]="pelicula.precio" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Precio" required>
+      <input type="text" id="imagen" name="imagen" [(ngModel)]="pelicula.imagen" class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Imagen (URL)" required>
     </div>
-    <div>
-      <label for="descripcion" class="block text-sm font-medium text-gray-600">Descripción</label>
-      <textarea id="descripcion" name="descripcion" [(ngModel)]="pelicula.descripcion" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
-    </div>
-    <div>
-      <label for="genero" class="block text-sm font-medium text-gray-600">Género</label>
-      <input type="text" id="genero" name="genero" [(ngModel)]="pelicula.genero" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <div>
-      <label for="duracion" class="block text-sm font-medium text-gray-600">Duración (minutos)</label>
-      <input type="number" id="duracion" name="duracion" [(ngModel)]="pelicula.duracion" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <div>
-      <label for="ano" class="block text-sm font-medium text-gray-600">Año</label>
-      <input type="number" id="ano" name="ano" [(ngModel)]="pelicula.ano" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <div>
-      <label for="precio" class="block text-sm font-medium text-gray-600">Precio</label>
-      <input type="number" id="precio" name="precio" [(ngModel)]="pelicula.precio" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <div>
-      <label for="imagen" class="block text-sm font-medium text-gray-600">Imagen (URL)</label>
-      <input type="text" id="imagen" name="imagen" [(ngModel)]="pelicula.imagen" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <button type="submit" class="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 mt-4">{{ formularioPelicula ? 'Actualizar Película' : 'Agregar Película' }}</button>
+    <button type="submit" class="w-full px-4 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition mt-4">{{ formularioPelicula ? 'Actualizar Película' : 'Agregar Película' }}</button>
   </form>
 </div>
+</section>

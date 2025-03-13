@@ -43,7 +43,7 @@ export class PeliculasComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.autoSlide();
+    this.autoSlide();  // Llamamos a la función de auto deslizamiento después de que la vista se haya inicializado
   }
 
   cargarPeliculas() {
@@ -145,10 +145,28 @@ export class PeliculasComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/inicio-sesion']);
   }
 
-  autoSlide() {
-    let currentIndex = 0;
-    const carouselImages = document.querySelectorAll("#carousel img");
-    const totalImages = carouselImages.length;
+// Función de auto deslizamiento del carrusel
+autoSlide() {
+  let currentIndex = 0;
+  const carousel = document.querySelector("#carousel") as HTMLElement;
+  const carouselImages = document.querySelectorAll("#carousel img");
+  const totalImages = carouselImages.length;
 
-  }
+  // Función para avanzar al siguiente slide
+  const moveNext = () => {
+    currentIndex++;
+    if (currentIndex >= totalImages / 2) {  // Ajustamos el límite para que al llegar a la mitad de las imágenes duplicadas, vuelva al inicio
+      currentIndex = 0; // Si llegamos al final de las imágenes duplicadas, volvemos al inicio
+      carousel.style.transition = 'none'; // Desactivamos la transición para un cambio abrupto
+      carousel.style.transform = `translateX(0)`;  // Volvemos al inicio
+      setTimeout(() => {
+        carousel.style.transition = 'transform 0.5s ease-in-out';  // Reactivamos la transición
+      }, 50); // Esperamos un breve momento para que se reanude la transición
+    }
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;  // Mover el carrusel
+  };
+
+  // Hacer que el carrusel avance cada 3 segundos
+  setInterval(moveNext, 3000);
+}
 }

@@ -36,6 +36,6 @@ export class RegistroUsuariosComponent {
         console.error('Error al registrar usuario:', error);  // Muestra el error si algo falla
       }
     );
-    this.router.navigate(['/home']);
+    this.router.navigate(['/inicio-sesion']);
   }
 }

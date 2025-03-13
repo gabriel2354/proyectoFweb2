@@ -14,6 +14,7 @@ body {
     position: relative;
     background: url('https://images.pexels.com/photos/3379942/pexels-photo-3379942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center fixed;
     background-size: cover;
+    
 }
 
 .about-header {

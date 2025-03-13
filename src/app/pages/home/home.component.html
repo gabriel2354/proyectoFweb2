@@ -1,27 +1,75 @@
-<!-- Hero Section - Carousel de imágenes -->
-<section class="relative">
-    <div class="carousel-container relative w-full overflow-hidden">
-      <div class="carousel-slide flex transition-all duration-500 ease-in-out">
-        <img src="https://hips.hearstapps.com/hmg-prod/images/avatar-66ca0a9027f05.jpg?crop=1xw:1xh;center,top&resize=980:*" width="200px" height="200px" alt="Película 1" class="w-full h-auto object-cover">
-        <img src="https://hips.hearstapps.com/hmg-prod/images/la-mascara-del-zorro-66ca0a855bc4d.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Película 2" class="w-full h-auto object-cover">
-        <img src="https://hips.hearstapps.com/hmg-prod/images/king-kong-66ca0a873e337.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Película 3" class="w-full h-auto object-cover">
-      </div>
-      <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3" id="prevSlide">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-3" id="nextSlide">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-  </section>
+<section class="relative bg-black">
+  <!-- Título sobre el carousel -->
+  <div class="absolute text-center text-white z-10" style="top: 20%; left: 50%; transform: translate(-50%, 0%);">
+    <h1 class="text-5xl font-extrabold animate__animated animate__fadeIn opacity-0">CINEMAX</h1>
+    <p class="text-xl mt-4 animate__animated animate__fadeIn animate__delay-1s">¡Las mejores películas, las mejores experiencias!</p>
+  </div>
   
-  <!-- Descripción del cine -->
-  <section class="py-16 bg-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-center text-gray-900">Bienvenidos a CINEMAX</h2>
-      <p class="mt-4 text-center text-lg text-gray-700">Disfruta de una experiencia única con nuestras proyecciones, en un ambiente cómodo y moderno. Ven y vive el cine como nunca antes.</p>
+
+  <!-- Contenedor del carousel -->
+  <div class="carousel-container relative w-full overflow-hidden">
+    <!-- Slider con imágenes -->
+    <div #carouselSlide class="carousel-slide flex transition-all duration-500 ease-in-out">
+      <div class="relative w-full flex-shrink-0">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9DFC9P4CaXDfUwMOS5yGyEfOSGNX5xC6ylRv48xbJSZAyuqScOnU2kvY4H22Ve51w4pr2-_TaPqVWzSF_xwb78PHu32tNM7wZnsk0magTiYqupgrWewjUaUeqGQaNc6bFkaFhb1kUAM8L8h59OUh9AYRluyxXUwjeteVjq8WGp11XtcL8g1IB2G9M/s1056/AvatarElCaminoelAguaCritica.jpg" alt="Película 1" class="w-full h-96 object-contain">
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4">
+          <h3 class="text-2xl font-bold">Avatar</h3>
+          <p>Una historia épica de ciencia ficción en Pandora.</p>
+        </div>
+      </div>
+      <div class="relative w-full flex-shrink-0">
+        <img src="https://occ-0-8407-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZ_0cuUItiLb2XDhkgl43D4dZVCDfO0KdFjpbjl-Pmv9EUJqBwMI-WP_vrIiMLods29kSx4-jSXrOc4wyAZYulr8TS02VUFs3jGK.jpg?r=c90" alt="Película 2" class="w-full h-96 object-contain">
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4">
+          <h3 class="text-2xl font-bold">La Máscara del Zorro</h3>
+          <p>La leyenda del Zorro resucita en una nueva aventura.</p>
+        </div>
+      </div>
+      <div class="relative w-full flex-shrink-0">
+        <img src="https://authentic-indonesia.com/wp-content/uploads/2019/09/king-kong-movie-shooting-location-in-mursala-island-sumatra-indonesia.jpg" alt="Película 3" class="w-full h-96 object-contain">
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-4">
+          <h3 class="text-2xl font-bold">King Kong</h3>
+          <p>La historia del gigante gorila en la isla Skull.</p>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- Botones para navegar -->
+    <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-4" id="prevSlide">
+      <i class="fas fa-chevron-left text-3xl"></i>
+    </button>
+    <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-4" id="nextSlide">
+      <i class="fas fa-chevron-right text-3xl"></i>
+    </button>
+  </div>
+</section>
+
+
+
+  
+<!-- Descripción del cine -->
+<section class="py-16 ">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-extrabold text-center text-gray-900 leading-tight mb-6">
+      Bienvenidos a CINEMAX
+    </h2>
+    <div class="text-center mb-8">
+      <p class="text-lg text-gray-700 mb-6">
+        En CINEMAX, nos dedicamos a brindarte una experiencia cinematográfica única. No solo proyectamos películas, sino que te transportamos a otros mundos, te hacemos vivir cada historia como si fueras parte de ella. 
+        Nuestro cine está diseñado para ofrecerte el máximo confort, tecnología de punta y un ambiente que te hará disfrutar de cada minuto de tu experiencia.
+      </p>
+      <p class="text-lg text-gray-700">
+        Desde los últimos estrenos hasta los clásicos que nunca pasarán de moda, en CINEMAX encontrarás una amplia selección de películas para todos los gustos. Ya sea que prefieras emocionantes aventuras, conmovedoras historias de amor o películas de acción, tenemos algo para ti.
+      </p>
+    </div>
+
+    <div class="flex justify-center mt-10">
+      <button class="bg-blue-600 text-white py-2 px-6 rounded-lg text-xl font-semibold hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+        Explorar Cartelera
+      </button>
+    </div>
+  </div>
+</section>
+
   
   <!-- Tarjetas de películas -->
   <section class="py-16 bg-white">
@@ -34,7 +82,6 @@
           <div class="p-4">
             <h3 class="text-xl font-semibold text-gray-800">Película 1</h3>
             <p class="mt-2 text-gray-600">Una sinopsis breve de la película, que describe de manera atractiva el contenido del filme.</p>
-            <a routerLink="/peliculas" class="mt-4 inline-block text-blue-600 hover:text-blue-800">Ver más</a>
           </div>
         </div>
   
@@ -44,7 +91,6 @@
           <div class="p-4">
             <h3 class="text-xl font-semibold text-gray-800">Película 2</h3>
             <p class="mt-2 text-gray-600">Descripción breve y llamativa de la trama, que despierta la curiosidad del público.</p>
-            <a routerLink="/peliculas" class="mt-4 inline-block text-blue-600 hover:text-blue-800">Ver más</a>
           </div>
         </div>
   
@@ -54,7 +100,6 @@
           <div class="p-4">
             <h3 class="text-xl font-semibold text-gray-800">Película 3</h3>
             <p class="mt-2 text-gray-600">Una descripción atractiva de la película, que genera interés en el público.</p>
-            <a routerLink="/peliculas" class="mt-4 inline-block text-blue-600 hover:text-blue-800">Ver más</a>
           </div>
         </div>
   
@@ -64,28 +109,32 @@
           <div class="p-4">
             <h3 class="text-xl font-semibold text-gray-800">Película 4</h3>
             <p class="mt-2 text-gray-600">Una pequeña sinopsis que atrae la atención, perfecta para captar la curiosidad del visitante.</p>
-            <a routerLink="/peliculas" class="mt-4 inline-block text-blue-600 hover:text-blue-800">Ver más</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sección de Imagen Estática -->
-<section class="relative bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="relative overflow-hidden h-96">
-        <!-- Imagen estática -->
-        <img src="https://hips.hearstapps.com/hmg-prod/images/2001-una-odisea-en-el-espacio-66ca0a87959ae.jpg?crop=1xw:1xh;center,top&resize=980:*" alt="Imagen Estática" class="w-full h-full object-cover object-center" id="static-image">
-        <!-- Texto en el medio de la imagen -->
-        <div class="absolute inset-0 flex items-center justify-center text-center text-white">
-          <div>
-            <h2 class="text-3xl font-extrabold">¡Regístrate y forma parte de nuestra clientela exclusiva!</h2>
-            <p class="mt-4 text-lg">Disfruta de beneficios especiales, acceso anticipado y mucho más.</p>
-            <button routerLink="/inicio-sesion" class="mt-6 bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">Regístrate</button>
-          </div>
+<!-- Sección de Imagen Estática -->
+<section class="relative bg-gray-900 w-full">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="relative overflow-hidden h-96">
+      <!-- Imagen estática con un gradiente oscuro para mejorar la visibilidad del texto -->
+      <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/fb00d909-d7b2-458b-8fa7-3ab8a843fec9.__CR0,0,970,300_PT0_SX970_V1___.jpg" alt="Imagen Estática" class="w-full h-full object-cover object-center" id="static-image">
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+      
+      <!-- Texto en el medio de la imagen -->
+      <div class="absolute inset-0 flex items-center justify-center text-center text-white px-4 sm:px-6 md:px-8">
+        <div>
+          <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight">¡Regístrate y forma parte de nuestra clientela exclusiva!</h2>
+          <p class="mt-4 text-lg sm:text-xl">Disfruta de beneficios especiales, acceso anticipado y mucho más.</p>
+          <button routerLink="/registro-usuarios" class="mt-6 bg-blue-600 text-white px-8 py-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 transform hover:scale-105">
+            Regístrate
+          </button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   
