@@ -18,7 +18,8 @@ export interface Pelicula {
   providedIn: 'root'
 })
 export class PeliculasService {
-  private apiUrl = 'http://localhost:3000/peliculas'; // URL del backend (puedes cambiarla si es necesario)
+  // Cambiar la URL para que coincida con la del backend de Spring Boot
+  private apiUrl = 'http://localhost:8080/peliculas'; // URL del backend (ajusta según sea necesario)
 
   constructor(private http: HttpClient) { }
 
@@ -27,20 +28,25 @@ export class PeliculasService {
     return this.http.get<Pelicula[]>(this.apiUrl);
   }
 
-  // Método POST: Crear una nueva película (con los campos 'precio' e 'imagen')
-  agregarPelicula(pelicula: Pelicula): Observable<Pelicula> {
-    return this.http.post<Pelicula>(this.apiUrl, pelicula);
-  }
+  // Método POST para agregar una nueva película
+agregarPelicula(pelicula: Pelicula): Observable<Pelicula> {
+  return this.http.post<Pelicula>(`${this.apiUrl}/guardar`, pelicula, {
+    headers: {
+      'Content-Type': 'application/json' // Asegura que el cuerpo sea enviado como JSON
+    }
+  });
+}
 
-  // Método PUT: Actualizar una película (con los campos 'precio' e 'imagen')
-  actualizarPelicula(id: number, pelicula: Pelicula): Observable<Pelicula> {
-    return this.http.put<Pelicula>(`${this.apiUrl}/${id}`, pelicula);
-  }
+// Método PUT para actualizar una película existente
+actualizarPelicula(id: number, pelicula: Pelicula): Observable<Pelicula> {
+  return this.http.put<Pelicula>(`${this.apiUrl}/${id}`, pelicula); // Cambié la URL aquí
+}
 
-  // Método DELETE: Eliminar una película
-  eliminarPelicula(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
-  }
+
+ // Método DELETE: Eliminar una película
+ eliminarPelicula(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/${id}`);  // Llama al endpoint DELETE
+}
 
   // Método GET: Obtener una película por ID
   obtenerPeliculaPorId(id: number): Observable<Pelicula> {

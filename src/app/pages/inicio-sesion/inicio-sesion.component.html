@@ -6,32 +6,42 @@
     <h2 class="text-4xl font-extrabold text-center text-white">Iniciar Sesión</h2>
     
     <!-- Formulario de inicio de sesión -->
-    <form #formulario="ngForm" (ngSubmit)="iniciarSesion()" class="mt-6 space-y-6">
+    <form #formulario="ngForm" (ngSubmit)="login()" class="mt-6 space-y-6">
       <div>
         <label for="email" class="block text-white text-lg">Correo Electrónico</label>
-        <input type="email" id="email" [(ngModel)]="correo" name="email" required placeholder="Ingresa tu correo" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 hover:bg-gray-700 transition duration-300" />
+        <input type="email" id="email" [(ngModel)]="correo" name="email" required placeholder="Ingresa tu correo" 
+               class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 hover:bg-gray-700 transition duration-300"
+               aria-label="Correo electrónico" />
       </div>
       
       <div>
         <label for="password" class="block text-white text-lg">Contraseña</label>
-        <input [type]="passwordVisible ? 'text' : 'password'"  id="password" [(ngModel)]="contrasena" name="password" required placeholder="Ingresa tu contraseña" class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 hover:bg-gray-700 transition duration-300" />
+        <input [type]="passwordVisible ? 'text' : 'password'" id="password" [(ngModel)]="contrasena" name="password" required 
+               placeholder="Ingresa tu contraseña" 
+               class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 hover:bg-gray-700 transition duration-300"
+               aria-label="Contraseña" />
       </div>
 
       <!-- Checkbox para mostrar la contraseña -->
       <div class="flex items-center mb-6">
-        <input type="checkbox" id="showPassword" (click)="visible()" class="mr-2">
+        <input type="checkbox" id="showPassword" (click)="visible()" class="mr-2" aria-label="Mostrar contraseña">
         <label for="showPassword" class="text-white text-sm">Mostrar contraseña</label>
       </div>
 
-      <button type="submit" class="w-full mt-4 py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 transform hover:scale-105">Iniciar Sesión</button>
+      <!-- Botón de inicio de sesión -->
+      <button type="submit" class="w-full mt-4 py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 transform hover:scale-105" aria-label="Iniciar sesión">
+        Iniciar Sesión
+      </button>
       
+      <!-- Enlace para recuperación de contraseña -->
       <div class="text-center mt-4">
         <a href="#" class="text-blue-300 hover:text-blue-400">¿Olvidaste tu contraseña?</a>
       </div>
       
+      <!-- Enlace para redirigir a la página de registro -->
       <div class="text-center mt-4">
         <p class="text-white text-sm">¿No tienes una cuenta? 
-          <a routerLink="/registro-usuarios" class="text-blue-300 hover:text-blue-400">Regístrate aquí</a>
+          <a routerLink="/clientes-registro" class="text-blue-300 hover:text-blue-400">Regístrate aquí</a>
         </p>
       </div>
       
@@ -42,10 +52,15 @@
       
     </form>
   </div>
+  
+  <!-- Imagen de fondo (opcional) -->
+  <div class="w-full sm:w-1/2 bg-cover bg-center" style="background-image: url('path_to_your_image.jpg');"></div>
+  
+</section>
+
 
   <!-- Imagen (Lado Derecho) -->
   <div class="w-1/2 hidden sm:block">
     <img src="https://img.freepik.com/vector-gratis/ilustracion-concepto-inicio-sesion_114360-739.jpg?t=st=1741637151~exp=1741640751~hmac=43d56ad822ee1f70bbe12f3aac1ece40d1e459e5f219f5cb78fe095c5bb051b3&w=1060" alt="Imagen de Inicio de Sesión" class="w-full h-full object-cover rounded-lg shadow-lg">
   </div>
 
-</section>

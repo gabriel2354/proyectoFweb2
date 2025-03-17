@@ -1,0 +1,164 @@
+/* Estilos Globales */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('https://www.fotogramas.es/noticias-cine/a64193793/estado-electrico-netflix-pelicula-mas-vista-ciencia-ficcion-aventuras-millie-bobby-brown-chris-pratt/'); /* Aquí puedes poner la URL de tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sección principal */
+section {
+  padding: 50px 0;
+  text-align: center;
+  backdrop-filter: blur(10px); /* Desenfoque para el fondo */
+  background-color: rgba(0, 0, 0, 0.5); /* Filtro semitransparente para el fondo */
+  border-radius: 10px;
+}
+
+/* Título de la Sección */
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de la Tabla */
+.table-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-radius: 10px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.2); /* Fondo sutil */
+}
+
+th,
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #444;
+}
+
+th {
+  background: linear-gradient(to right, #4c6ef5, #6f42c1); /* Gradiente profesional */
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+td {
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Efecto al pasar el ratón */
+  cursor: pointer;
+}
+
+/* Botones de acciones */
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+button i {
+  margin-right: 8px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Botones de acción específicos */
+button.bg-red-500 {
+  background-color: #e74c3c;
+}
+
+button.bg-blue-500 {
+  background-color: #3498db;
+}
+
+button.bg-green-600 {
+  background-color: #2ecc71;
+}
+
+button.bg-red-500:hover {
+  background-color: #c0392b;
+}
+
+button.bg-blue-500:hover {
+  background-color: #2980b9;
+}
+
+button.bg-green-600:hover {
+  background-color: #27ae60;
+}
+
+/* Formulario para agregar/editar cliente */
+.formulario_cliente {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.formulario_cliente h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.formulario_cliente label {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 8px;
+}
+
+.formulario_cliente input,
+.formulario_cliente textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.formulario_cliente button {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.formulario_cliente button:hover {
+  background-color: #2980b9;
+}

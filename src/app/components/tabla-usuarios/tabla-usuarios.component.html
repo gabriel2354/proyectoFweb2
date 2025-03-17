@@ -1,75 +1,81 @@
-<section class="flex flex-col items-center ">
-  <div class="fondo"></div>
-<h2 class="text-2xl font-bold text-center pt-8">Usuarios Registrados</h2>
-
-<!-- Tabla de usuarios -->
-<div class="table-container p-6 flex justify-center">
-  <table class=" shadow-2xl rounded-2xl border border-gray-600 backdrop-blur-lg bg-white/10 overflow-hidden">
-    <thead class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
-      <tr class="text-lg text-center">
-        <th class="px-6 py-3 border-b border-gray-500">ID</th>
-        <th class="px-6 py-3 border-b border-gray-500">Nombre</th>
-        <th class="px-6 py-3 border-b border-gray-500">Apellido</th>
-        <th class="px-6 py-3 border-b border-gray-500">Edad</th>
-        <th class="px-6 py-3 border-b border-gray-500">Correo</th>
-        <th class="px-6 py-3 border-b border-gray-500">Acciones</th>
-      </tr>
-    </thead>
-    <tbody class="text-white">
-      <tr *ngFor="let usuario of usuarios" class="text-center bg-gray-800 hover:bg-gray-700 transition duration-300">
-        <td class="px-6 py-4 border-b border-gray-600">{{ usuario.id }}</td>
-        <td class="px-6 py-4 border-b border-gray-600">{{ usuario.nombre }}</td>
-        <td class="px-6 py-4 border-b border-gray-600">{{ usuario.apellido }}</td>
-        <td class="px-6 py-4 border-b border-gray-600">{{ usuario.edad }}</td>
-        <td class="px-6 py-4 border-b border-gray-600">{{ usuario.correo }}</td>
-        <td class="px-6 py-4 border-b border-gray-600 flex justify-center space-x-3">
-          <button (click)="eliminarUsuario(usuario.id)" class="px-4 py-2 bg-red-500 hover:bg-red-600 rounded-lg shadow-lg text-white flex items-center space-x-2 transition-all transform hover:scale-105">
-            <i class="fas fa-trash-alt"></i><span>Eliminar</span>
-          </button>
-          <button (click)="editarUsuario(usuario)" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg shadow-lg text-white flex items-center space-x-2 transition-all transform hover:scale-105">
-            <i class="fas fa-edit"></i><span>Editar</span>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-<!-- Botón para agregar nuevo usuario -->
-<div class="text-center mt-8">
-  <button (click)="mostrarFormularioNuevo()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Agregar Nuevo Usuario</button>
-</div>
-
-<!-- Formulario para agregar/editar usuario -->
-<div *ngIf="formularioVisible" class="mt-8 p-4 bg-gray-800 text-white rounded-lg formulario_usuario">
-  <h3 class="text-xl font-bold text-center">{{ formularioUsuario ? 'Editar Usuario' : 'Agregar Nuevo Usuario' }}</h3>
-  <form (ngSubmit)="guardar(formulario)" #formulario="ngForm" class="space-y-4">
-    <div>
-      <label for="nombre" class="block text-sm font-medium ">Nombre</label>
-      <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+<section class="flex flex-col items-center">
+    <div class="fondo"></div>
+    <h2 class="text-2xl font-bold text-center">Usuarios Registrados</h2>
+  
+    <!-- Tabla de usuarios -->
+    <table class="table-container bg-gray-900 text-white rounded-lg shadow-lg overflow-hidden">
+      <thead class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+        <tr>
+          <th class="px-4 py-2">ID</th>
+          <th class="px-4 py-2">Nombre</th>
+          <th class="px-4 py-2">Apellido</th>
+          <th class="px-4 py-2">Correo</th>
+          <th class="px-4 py-2">Username</th> <!-- Añadido el campo username -->
+          <th class="px-4 py-2">Rol</th>
+          <th class="px-4 py-2">Acciones</th>
+        </tr>
+      </thead>
+      <tbody class="bg-gray-700 text-white">
+        <tr *ngFor="let usuario of usuarios">
+          <td class="px-4 py-2">{{ usuario.id }}</td>
+          <td class="px-4 py-2">{{ usuario.nombre }}</td>
+          <td class="px-4 py-2">{{ usuario.apellido }}</td>
+          <td class="px-4 py-2">{{ usuario.correo }}</td>
+          <td class="px-4 py-2">{{ usuario.username }}</td> <!-- Mostrar el username -->
+          <td class="px-4 py-2">{{ usuario.rol }}</td>
+          <td class="px-4 py-2">
+              <!-- Botones de acción -->
+              <button (click)="eliminarUsuario(usuario.id)" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                <i class="fas fa-trash-alt mr-2"></i> Eliminar
+              </button>
+              <button (click)="editarUsuario(usuario)" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 ml-2">
+                <i class="fas fa-edit mr-2"></i> Editar
+              </button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Botón para agregar nuevo usuario -->
+    <div class="text-center mt-8">
+      <button (click)="mostrarFormularioNuevo()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Agregar Nuevo</button>
     </div>
-    <div>
-      <label for="apellido" class="block text-sm font-medium ">Apellido</label>
-      <input type="text" id="apellido" name="apellido" [(ngModel)]="usuario.apellido" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+  
+    <!-- Formulario para agregar/editar usuario -->
+    <div *ngIf="formularioVisible" class="mt-8 p-4 bg-gray-800 text-white rounded-lg formulario_usuario">
+      <h3 class="text-xl font-bold text-center">{{ formularioUsuario ? 'Editar Usuario' : 'Agregar Nuevo Usuario' }}</h3>
+      <form (ngSubmit)="guardar(formulario)" #formulario="ngForm" class="space-y-4">
+        <div>
+          <label for="nombre" class="block text-sm font-medium">Nombre</label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+        </div>
+        <div>
+          <label for="apellido" class="block text-sm font-medium">Apellido</label>
+          <input type="text" id="apellido" name="apellido" [(ngModel)]="usuario.apellido" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+        </div>
+        <div>
+          <label for="correo" class="block text-sm font-medium">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo" [(ngModel)]="usuario.correo" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+        </div>
+        <div>
+          <label for="username" class="block text-sm font-medium">Username</label>
+          <input type="text" id="username" name="username" [(ngModel)]="usuario.username" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+        </div>
+        <div>
+          <label for="contrasena" class="block text-sm font-medium">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" [(ngModel)]="usuario.contrasena" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+        </div>
+        
+        <div>
+          <label for="rol" class="block text-sm font-medium">Rol</label>
+          <select id="rol" name="rol" [(ngModel)]="usuario.rol" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500">
+              <option value="ADMIN">ADMIN</option> <!-- Cambiado a los valores correctos del enum -->
+              <option value="CLIENTE">CLIENTE</option>
+              <option value="EMPLEADO">EMPLEADO</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 mt-4">{{ formularioUsuario ? 'Actualizar' : 'Agregar' }}</button>
+      </form>
     </div>
-    <div>
-      <label for="edad" class="block text-sm font-medium ">Edad</label>
-      <input type="number" id="edad" name="edad" [(ngModel)]="usuario.edad" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <div>
-      <label for="correo" class="block text-sm font-medium ">Correo Electrónico</label>
-      <input type="email" id="correo" name="correo" [(ngModel)]="usuario.correo" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <div>
-      <label for="direccion" class="block text-sm font-medium ">Dirección</label>
-      <textarea id="direccion" name="direccion" [(ngModel)]="usuario.direccion" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
-    </div>
-    <div>
-      <label for="contrasena" class="block text-sm font-medium ">Contraseña</label>
-      <input type="password" id="contrasena" name="contrasena" [(ngModel)]="usuario.contrasena" class="w-full px-4 py-2 mt-1 border rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <button type="submit" class="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 mt-4">{{ formularioUsuario ? 'Actualizar Usuario' : 'Agregar Usuario' }}</button>
-  </form>
-</div>
-</section>
+  </section>
+  

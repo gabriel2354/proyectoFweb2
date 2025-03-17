@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { TablaAdministradorComponent } from "../../components/tabla-administrador/tabla-administrador.component";
-import { RegistroAdministradorComponent } from "../../components/registro-administrador/registro-administrador.component";
+
+import { TablaUsuariosComponent } from '../../components/tabla-usuarios/tabla-usuarios.component';
+
 
 @Component({
   selector: 'app-administrador',
   standalone: true,
-  imports: [TablaAdministradorComponent, RegistroAdministradorComponent],
+  imports: [TablaUsuariosComponent, ],
   templateUrl: './administrador.component.html',
   styleUrl: './administrador.component.css'
 })
